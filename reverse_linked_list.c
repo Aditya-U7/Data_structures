@@ -1,6 +1,16 @@
+/*
+
+Author: Aditya Upadhye
+
+A C program for reversing the nodes in a linked_list.
+
+*/	
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
 
 struct list_node
 {
@@ -11,49 +21,53 @@ struct list_node
 struct list_node* head = NULL;
 struct list_node* current = NULL;
 
+bool is_linked_list_empty()
+{
+       if (head == NULL)
+       {
+		printf("The Linked list is empty.\n");
+                return true;  
+       }
+       else
+       {
+                return false;   
+       }
+                
+}
+
+
 
 void add_node(int val)
 {
 
+	struct list_node* tmp = malloc(sizeof(struct list_node));
+
+	tmp -> value = val;
+	tmp -> next = NULL;
+
 	if (head == NULL)
 	{
-		head = malloc(sizeof(struct list_node));
-		head -> value = val;
-		head -> next = NULL;
-		current = head;
-
-
+		head = tmp;
 	}
 
 	else
 	{
-		struct list_node* tmp = malloc(sizeof(struct list_node));
-		tmp -> value = val;
-		tmp -> next = NULL;
-
-
 		current -> next = tmp;
-		current = tmp;
-
-
 	}
+
+	current = tmp;
 
 }
 
 void reverse_the_linked_list()
 {
-
-	if (head == NULL)
-	{
-		printf("The Linked list is empty.");
-		return;
-	}
+        
+	if (is_linked_list_empty())
+	    exit(1); 
 
 	struct list_node* curr = head;
 	struct list_node* prev = NULL; 
 	struct list_node* tmp = NULL; 
-
-	current = head;
 
 	while (curr -> next != NULL)
 	{
@@ -72,7 +86,10 @@ void reverse_the_linked_list()
 
 
 void display()
-{
+{       
+        if (is_linked_list_empty())
+	    exit(1); 
+	
 	struct list_node* ptr = head;
 	while (true)
 	{
