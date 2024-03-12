@@ -11,6 +11,7 @@ A C program for creating a linked_list using a structure and a structure pointer
 #include <stdlib.h>
 #include <stdbool.h>
 
+
 struct list_node
 {
 	int value;
@@ -20,6 +21,19 @@ struct list_node
 struct list_node* head = NULL;
 struct list_node* current = NULL;
 
+bool is_linked_list_empty()
+{
+       if (head == NULL)
+       {
+		printf("The Linked list is empty.\n");
+                return true;  
+       }
+       else
+       {
+                return false;   
+       }
+                
+}
 
 void add_node(int val)
 {
@@ -44,8 +58,11 @@ void add_node(int val)
 }
 
 void display()
-{
-        struct list_node* ptr = head;
+{       
+        if (is_linked_list_empty())
+	    exit(1);
+        
+	struct list_node* ptr = head;
 	while (true)
 	{
 
