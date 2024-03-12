@@ -24,29 +24,23 @@ struct list_node* current = NULL;
 void add_node(int val)
 {
 
+	struct list_node* tmp = malloc(sizeof(struct list_node));
+        
+        tmp -> value = val;
+        tmp -> next = NULL;
+        
 	if (head == NULL)
 	{
-		head = malloc(sizeof(struct list_node));
-		head -> value = val;
-		head -> next = NULL;
-		current = head;
-
-		
-	}
-
-	else
+		head = tmp;
+        }
+        
+        else
 	{
-		struct list_node* tmp = malloc(sizeof(struct list_node));
-		tmp -> value = val;
-		tmp -> next = NULL;
-
-
 		current -> next = tmp;
-		current = tmp;
-
-
 	}
 
+        current = tmp;
+      
 }
 
 void display()
