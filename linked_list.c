@@ -1,3 +1,12 @@
+/*
+
+Author: Aditya Upadhye
+
+A C program for creating a linked_list using a structure and a structure pointer.
+
+*/	
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
