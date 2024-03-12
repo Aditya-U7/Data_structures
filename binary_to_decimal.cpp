@@ -1,11 +1,15 @@
-/* Author: Aditya Upadhye
+/
+
+* Author: Aditya Upadhye
 
 A simple program to convert binary to equivalent decimal.
 
 */
 
+
 #include <iostream>
 #include <cmath>
+
 
 void binary_to_decimal(std::string n)
 {
