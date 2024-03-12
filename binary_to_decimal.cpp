@@ -1,6 +1,6 @@
-/
+/* 
 
-* Author: Aditya Upadhye
+Author: Aditya Upadhye
 
 A simple program to convert binary to equivalent decimal.
 
