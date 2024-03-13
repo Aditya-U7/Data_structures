@@ -35,6 +35,7 @@ bool is_linked_list_empty()
                 
 }
 
+
 void add_node(int val)
 {
 
@@ -56,6 +57,7 @@ void add_node(int val)
         current = tmp;
       
 }
+
 
 void display()
 {       
