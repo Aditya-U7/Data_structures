@@ -65,6 +65,7 @@ void display()
 	    exit(1);
         
 	struct list_node* ptr = head;
+	
 	while (true)
 	{
 
