@@ -35,21 +35,13 @@ void binary_to_decimal(std::string n)
 }
 
 
-/*
-   void binary_to_octal(std::string n)
-   {
-
-
-   }
-   */
-
 int main()
 {
 	std::string user_input;
 	std::cin >> user_input;
 
 	binary_to_decimal(user_input);
-	//binary_to_octal()
+	
 	return 0;
 
 }
