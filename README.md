@@ -1,1 +1,1 @@
-A collection of programs in different languages.
+The repository contains implementation of various data structures.
