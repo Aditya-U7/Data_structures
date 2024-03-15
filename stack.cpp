@@ -11,10 +11,8 @@ A class-based implementation of the Stack data structure.
 
 class stack
 {
-	int s[100];
-	int top, size;
 	
-	public:
+public:
 
 	stack()
 	{
@@ -94,6 +92,12 @@ class stack
 		}
 
 	}
+
+private:
+
+        int s[100];
+	int top;
+        int size;
 };
 
 
