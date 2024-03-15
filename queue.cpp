@@ -101,7 +101,7 @@ class queue
 
 	}
 
-	private:
+private:
         
         int q[100];
 	int front = -1; 
