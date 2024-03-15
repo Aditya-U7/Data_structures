@@ -81,7 +81,7 @@ void display()
 int main()
 {
 	
-	for (int i = 0; i<=100; i++)
+	for (int i = 0; i <= 100; i++)
 	    add_node(i);
         
 	display();
