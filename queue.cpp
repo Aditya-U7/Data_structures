@@ -11,12 +11,8 @@ A class-based implementation of the Queue data structure.
 
 class queue
 {
-	int q[100];
-	int front = -1; 
-	int rear = -1;
-	int size;
-
-	public:
+	
+    public:
 
 	queue()
 	{
@@ -104,6 +100,14 @@ class queue
 		}
 
 	}
+
+	private:
+        
+        int q[100];
+	int front = -1; 
+	int rear = -1;
+	int size;
+
 };
 
 
