@@ -11,8 +11,7 @@ A class-based implementation of the Stack data structure.
 
 class stack
 {
-	
-public:
+	public:
 
 	stack()
 	{
@@ -45,7 +44,7 @@ public:
 
 	}
 	
-	void push(int val)
+	void push(int user_input)
 	{
 		if (top >= (size -1))
 		{
@@ -54,7 +53,7 @@ public:
 		}
 		else
 		{
-			s[++top] = val;
+			s[++top] = user_input;
 		}	
 
 	}
@@ -77,8 +76,10 @@ public:
 		if (top >= 0)
 		{
 			
-			std::cout << "Top of stack is: " << s[top] << std::endl;
-			for (int i = top - 1; i >= 0; i--)
+			std::cout << "\nTop of stack is: " << s[top] << std::endl;
+			std::cout << "\nStack:\n\n";
+			
+			for (int i = top; i >= 0; i--)
 			{
 				std::cout << s[i] << std::endl;
 			}
@@ -92,29 +93,31 @@ public:
 		}
 
 	}
-
-private:
-
-        int s[100];
-	int top;
-        int size;
+	
+	private:
+	
+	int s[100];
+	int top, size;
+	
+	
 };
-
 
 int main()
 {
 
-	int len;
+	int length;
 
-	int ch,val;
+	int user_choice;
+	
+	int user_input;
 
-	char con = 'y';
+	char continue_ = 'y';
 
 	std::cout << "Enter the size of stack" << std::endl;
 
-	std::cin >> len;
+	std::cin >> length;
 
-	stack s(len);
+	stack s(length);
 
 	do{
 
@@ -128,29 +131,29 @@ int main()
 
 		std::cout << "4.Get top" << std::endl;
 
-		std::cin >> ch;
+		std::cin >> user_choice;
 
-		if (ch == 1)
+		if (user_choice == 1)
 		{
 
 			std::cout << "\n\nEnter the element to pushed" << std::endl;
-			std::cin >> val;
-			s.push(val);
+			std::cin >> user_input;
+			s.push(user_input);
 
 		}
-		else if (ch == 2)
+		else if (user_choice == 2)
 		{
 
 			s.pop();
 
 		}
-		else if (ch == 3)
+		else if (user_choice == 3)
 		{
 
 			s.display();
 
 		}
-		else if (ch == 4)
+		else if (user_choice == 4)
 		{
 
 			s.get_top();
@@ -163,10 +166,10 @@ int main()
 
 		}
 
-		std::cout << "Do you wish to continue [yes: press y | no: any non-y key]:" << std::endl;
-		std::cin >> con;
+		std::cout << "\n\nDo you wish to continue [yes: press y | no: any non-y key]:" << std::endl;
+		std::cin >> continue_;
 
-	}while (con == 'y');
+	}while (continue_ == 'y');
 
 	return 0;
 }

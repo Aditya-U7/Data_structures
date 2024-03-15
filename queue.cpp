@@ -11,102 +11,102 @@ A class-based implementation of the Queue data structure.
 
 class queue
 {
-	
-    public:
+	public:
 
-	queue()
-	{
-		size = 5;
-	}
-
-	queue(int size)
-	{
-
-		this->size = size;
-
-	}
-
-	bool is_queue_empty()
-	{
-		if ((rear == -1) || (front > rear))
-			return true;
-
-		else
-			return false;
-
-	}
-
-	void enqueue(int val)
-	{
-
-		if ((front == -1) && (front == rear))
+		queue()
 		{
-			front = 0;
-			q[++rear] = val;
+			size = 5;
+		}
 
+		queue(int size)
+		{
+
+			this->size = size;
 
 		}
 
-		else if (rear == (size - 1))
+		bool is_queue_empty()
 		{
-			std::cout << "Queue is full." << std::endl;
-			return;
+			if ((rear == -1) || (front > rear))
+				return true;
+
+			else
+				return false;
+
 		}
-		else
-		{
-			q[++rear] = val;
-		}	
 
-	}
-
-	void dequeue()
-	{
-		if (is_queue_empty())
-		{
-			std::cout << "Queue is empty."<< std::endl;
-		}
-		else 
+		void enqueue(int user_input)
 		{
 
-			front++;
-			if (front > rear)
+			if ((front == -1) && (front == rear))
 			{
-				front = -1;
-				rear = -1;
+				front = 0;
+				q[++rear] = user_input;
+
+
+			}
+
+			else if (rear == (size - 1))
+			{
+				std::cout << "Queue is full." << std::endl;
+				return;
+			}
+			else
+			{
+				q[++rear] = user_input;
+			}	
+
+		}
+
+		void dequeue()
+		{
+			if (is_queue_empty())
+			{
+				std::cout << "Queue is empty."<< std::endl;
+			}
+			else 
+			{
+
+				front++;
+				if (front > rear)
+				{
+					front = -1;
+					rear = -1;
+				}
+
 			}
 
 		}
 
-	}
+		void display()
+		{       
 
-	void display()
-	{       
-
-		if (is_queue_empty())
-		{
-
-			std::cout << "Queue is empty." << std::endl;
-
-		}
-		else
-		{
-
-
-			for (int i = front; i <= rear; i++)
+			if (is_queue_empty())
 			{
-				std::cout << q[i] << std::endl;
+
+				std::cout << "Queue is empty." << std::endl;
+
+			}
+			else
+			{
+                                   
+                                std::cout << "\nFront: " << front << "  Rear:  " << rear<< "\n\n";
+                                
+				for (int i = front; i <= rear; i++)
+				{
+					std::cout << q[i] << " ";
+				}
+
 			}
 
 		}
 
-	}
+	private:
 
-private:
-        
-        int q[100];
-	int front = -1; 
-	int rear = -1;
-	int size;
+		int q[100];
+		int front = -1; 
+		int rear = -1;
+		int size;
 
 };
 
@@ -114,17 +114,17 @@ private:
 int main()
 {
 
-	int len;
+	int length;   
 
-	int ch,val;
+	int user_choice;
+	int user_input; 
 
-	char con = 'y';
-
+	char continue_ = 'y'; 
 	std::cout << "Enter the size of queue" << std::endl;
 
-	std::cin >> len;
+	std::cin >> length;
 
-	queue q(len);
+	queue q(length);
 
 	do{
 
@@ -136,23 +136,23 @@ int main()
 
 		std::cout << "3 :Display" << std::endl;
 
-		std::cin >> ch;
+		std::cin >> user_choice;
 
-		if (ch == 1)
+		if (user_choice == 1)
 		{
 
-			std::cout << "\n\nEnter the element to pushed" << std::endl;
-			std::cin >> val;
-			q.enqueue(val);
+			std::cout << "\n\nEnter the element to be enqueued" << std::endl;
+			std::cin >> user_input;
+			q.enqueue(user_input);
 
 		}
-		else if (ch == 2)
+		else if (user_choice == 2)
 		{
 
 			q.dequeue();
 
 		}
-		else if (ch == 3)
+		else if (user_choice == 3)
 		{
 
 			q.display();
@@ -166,10 +166,10 @@ int main()
 
 		}
 
-		std::cout << "Do you wish to continue [yes: press y | no: any non-y key]:" << std::endl;
-		std::cin >> con;
+		std::cout << "\n\nDo you wish to continue [yes: press y | no: any non-y key]:" << std::endl;
+		std::cin >> continue_;
 
-	}while (con == 'y');
+	}while (continue_ == 'y');
 
 	return 0;
 }
