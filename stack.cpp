@@ -9,16 +9,16 @@ A class-based implementation of the Stack data structure.
 #include <iostream>
 
 
-class stack
+class Stack
 {
 	public:
 
-	stack()
+	Stack()
 	{
 		size = 5;
 	}
 	
-	stack(int size)
+	Stack(int size)
 	{
 
 		this->size = size;
@@ -31,7 +31,7 @@ class stack
 		if (is_stack_empty())
 			std::cout << "Stack is empty." << std::endl;
 		else
-			std::cout << "Top of stack is: " << s[top] << std::endl;
+			std::cout << "Top of Stack is: " << s[top] << std::endl;
 
 	}
 
@@ -76,7 +76,7 @@ class stack
 		if (top >= 0)
 		{
 			
-			std::cout << "\nTop of stack is: " << s[top] << std::endl;
+			std::cout << "\nTop of Stack is: " << s[top] << std::endl;
 			std::cout << "\nStack:\n\n";
 			
 			for (int i = top; i >= 0; i--)
@@ -97,7 +97,8 @@ class stack
 	private:
 	
 	int s[100];
-	int top, size;
+	int top; 
+	int size;
 	
 	
 };
@@ -113,11 +114,11 @@ int main()
 
 	char continue_ = 'y';
 
-	std::cout << "Enter the size of stack" << std::endl;
+	std::cout << "Enter the size of Stack" << std::endl;
 
 	std::cin >> length;
 
-	stack s(length);
+	Stack s(length);
 
 	do{
 

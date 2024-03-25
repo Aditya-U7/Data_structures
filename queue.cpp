@@ -9,16 +9,16 @@ A class-based implementation of the Queue data structure.
 #include <iostream>
 
 
-class queue
+class Queue
 {
 	public:
 
-		queue()
+		Queue()
 		{
 			size = 5;
 		}
 
-		queue(int size)
+		Queue(int size)
 		{
 
 			this->size = size;
@@ -120,11 +120,11 @@ int main()
 	int user_input; 
 
 	char continue_ = 'y'; 
-	std::cout << "Enter the size of queue" << std::endl;
+	std::cout << "Enter the size of Queue" << std::endl;
 
 	std::cin >> length;
 
-	queue q(length);
+	Queue q(length);
 
 	do{
 
